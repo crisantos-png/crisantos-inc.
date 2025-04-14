@@ -1,7 +1,7 @@
 
 # Crisantos Inc. Portfolio
 
-A professional portfolio website showcasing the web development skills and projects of Crisantos Inc.
+A professional portfolio website showcasing my web development skills, i'm crisantos BTW. and my brand is Crisantos inc.
 
 ## Technologies Used
 
@@ -71,7 +71,7 @@ This project can be deployed to platforms like Heroku:
 
 - Email: victorycrisantos0@gmail.com
 - Phone: +234 7025615619
-- GitHub: [github.com/crisantos](https://github.com/crisantos)
+- GitHub: [github.com/crisantos](https://github.com/crisantos-png)
 - LinkedIn: [linkedin.com/in/crisantos](https://linkedin.com/in/crisantos)
 - Twitter: [@crisantos_dev](https://twitter.com/crisantos_dev)
 
