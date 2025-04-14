@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
 
-## Project info
+# Crisantos Inc. Portfolio
 
-**URL**: https://lovable.dev/projects/0b1d45a5-5cd9-4215-8450-21d90486be4c
+A professional portfolio website showcasing the web development skills and projects of Crisantos Inc.
 
-## How can I edit this code?
+## Technologies Used
 
-There are several ways of editing your application.
+- HTML5
+- CSS3 
+- JavaScript (ES6+)
+- Python (Flask)
+- Font Awesome Icons
+- Google Fonts
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0b1d45a5-5cd9-4215-8450-21d90486be4c) and start prompting.
+- Responsive design for all devices
+- Interactive project showcase with filtering
+- Skills tabs with animated progress bars
+- Contact form with email functionality
+- Smooth scrolling and animations
+- Project modals for detailed information
 
-Changes made via Lovable will be committed automatically to this repo.
+## Setup and Installation
 
-**Use your preferred IDE**
+1. Clone the repository
+   ```
+   git clone https://github.com/your-username/crisantos-portfolio.git
+   cd crisantos-portfolio
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Install dependencies
+   ```
+   pip install -r requirements.txt
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Set environment variables for email functionality
+   ```
+   export SENDER_EMAIL=your-email@gmail.com
+   export SENDER_PASSWORD=your-app-password
+   ```
 
-Follow these steps:
+4. Run the application
+   ```
+   python app.py
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+5. Visit `http://localhost:5000` in your browser
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Deployment
 
-# Step 3: Install the necessary dependencies.
-npm i
+This project can be deployed to platforms like Heroku:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. Create a Heroku app
+   ```
+   heroku create crisantos-portfolio
+   ```
 
-**Edit a file directly in GitHub**
+2. Set environment variables
+   ```
+   heroku config:set SENDER_EMAIL=your-email@gmail.com
+   heroku config:set SENDER_PASSWORD=your-app-password
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Deploy
+   ```
+   git push heroku main
+   ```
 
-**Use GitHub Codespaces**
+## Contact
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Email: victorycrisantos0@gmail.com
+- Phone: +234 7025615619
+- GitHub: [github.com/crisantos](https://github.com/crisantos)
+- LinkedIn: [linkedin.com/in/crisantos](https://linkedin.com/in/crisantos)
+- Twitter: [@crisantos_dev](https://twitter.com/crisantos_dev)
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0b1d45a5-5cd9-4215-8450-21d90486be4c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License.
