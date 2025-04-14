@@ -3,6 +3,12 @@ import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const scrollToSection = (id: string) => {
+    document.querySelector(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-16">
       <div className="absolute inset-0 pointer-events-none">
@@ -24,17 +30,34 @@ const HeroSection = () => {
             responsive, and user-friendly web applications.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slideDown opacity-0 [animation-delay:800ms]">
-            <Button size="lg" className="bg-blue hover:bg-blue-dark text-white px-8 py-6 rounded-md">
+            <Button 
+              size="lg" 
+              className="bg-blue hover:bg-blue-dark text-white px-8 py-6 rounded-md"
+              onClick={() => scrollToSection('#projects')}
+            >
               View My Work
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-6 rounded-md">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="px-8 py-6 rounded-md"
+              onClick={() => scrollToSection('#contact')}
+            >
               Contact Me
             </Button>
           </div>
         </div>
         
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#about" aria-label="Scroll down" className="text-silver hover:text-blue transition-colors">
+          <a 
+            href="#about" 
+            aria-label="Scroll down" 
+            className="text-silver hover:text-blue transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('#about');
+            }}
+          >
             <ArrowDown size={32} />
           </a>
         </div>

@@ -144,8 +144,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
-                  <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-blue">
-                    contact@example.com
+                  <a href="mailto:victorycrisantos0@gmail.com" className="text-muted-foreground hover:text-blue">
+                    victorycrisantos0@gmail.com
                   </a>
                 </div>
               </div>
@@ -156,8 +156,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Phone</h4>
-                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-red">
-                    +1 (234) 567-890
+                  <a href="tel:+2347025615619" className="text-muted-foreground hover:text-red">
+                    +234 7025615619
                   </a>
                 </div>
               </div>
@@ -168,7 +168,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">GitHub</h4>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold">
+                  <a href="https://github.com/crisantos" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-gold">
                     github.com/crisantos
                   </a>
                 </div>
@@ -180,7 +180,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">LinkedIn</h4>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue">
+                  <a href="https://linkedin.com/in/crisantos" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-blue">
                     linkedin.com/in/crisantos
                   </a>
                 </div>
@@ -192,7 +192,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Twitter</h4>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-silver">
+                  <a href="https://twitter.com/crisantos_dev" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-silver">
                     @crisantos_dev
                   </a>
                 </div>
