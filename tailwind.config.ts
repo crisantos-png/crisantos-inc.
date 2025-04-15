@@ -128,8 +128,63 @@ export default {
 				'slideDown': 'slideDown 0.7s ease-in-out forwards',
 				'slideRight': 'slideRight 0.7s ease-in-out forwards',
 				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
-			}
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: 'none',
+						color: 'inherit',
+						a: {
+							color: 'var(--blue)',
+							textDecoration: 'underline',
+							'&:hover': {
+								color: 'var(--blue-dark)',
+							},
+						},
+						strong: {
+							fontWeight: '700',
+						},
+						hr: {
+							border: '1px solid var(--border)',
+							margin: '2rem 0',
+						},
+						blockquote: {
+							borderLeft: '4px solid var(--border)',
+							padding: '1rem 0 1rem 1.5rem',
+							margin: '1.5rem 0',
+							fontStyle: 'italic',
+						},
+						h1: {
+							fontWeight: '700',
+						},
+						h2: {
+							fontWeight: '700',
+						},
+						h3: {
+							fontWeight: '700',
+						},
+						h4: {
+							fontWeight: '700',
+						},
+						code: {
+							borderRadius: '0.375rem',
+							padding: '0.125rem 0.25rem',
+							backgroundColor: 'var(--muted)',
+							fontWeight: '400',
+						},
+						pre: {
+							borderRadius: '0.375rem',
+							padding: '1rem',
+							backgroundColor: 'var(--muted)',
+							overflow: 'auto',
+						},
+					},
+				},
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require('@tailwindcss/typography'),
+	],
 } satisfies Config;
