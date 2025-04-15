@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github, X } from 'lucide-react';
@@ -97,6 +96,10 @@ const ProjectsSection = () => {
     setSelectedProject(null);
   };
   
+  const handleProjectClick = (projectPath: string) => {
+    window.location.href = projectPath;
+  };
+  
   return (
     <section id="projects" className="section bg-secondary/50">
       <div className="space-y-12">
@@ -169,7 +172,7 @@ const ProjectsSection = () => {
                 <Button 
                   variant="default"
                   className="flex-1"
-                  onClick={() => window.location.href = project.projectPath}
+                  onClick={() => handleProjectClick(project.projectPath)}
                 >
                   View Project
                 </Button>
@@ -224,11 +227,12 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to={selectedProject.projectPath} className="flex-1">
-                  <Button className="w-full">
-                    View Full Project
-                  </Button>
-                </Link>
+                <Button 
+                  className="flex-1"
+                  onClick={() => handleProjectClick(selectedProject.projectPath)}
+                >
+                  View Full Project
+                </Button>
                 {selectedProject.liveUrl && (
                   <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <Button variant="outline" className="w-full">
