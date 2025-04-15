@@ -167,9 +167,9 @@ const ProjectsSection = () => {
                   Quick View
                 </Button>
                 <Button 
-                  as={Link} 
-                  to={project.projectPath} 
+                  variant="default"
                   className="flex-1"
+                  onClick={() => window.location.href = project.projectPath}
                 >
                   View Project
                 </Button>
@@ -224,26 +224,26 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="flex-1" asChild>
-                  <Link to={selectedProject.projectPath}>
+                <Link to={selectedProject.projectPath} className="flex-1">
+                  <Button className="w-full">
                     View Full Project
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
                 {selectedProject.liveUrl && (
-                  <Button variant="outline" className="flex-1" asChild>
-                    <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <Button variant="outline" className="w-full">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Visit Live
-                    </a>
-                  </Button>
+                    </Button>
+                  </a>
                 )}
                 {selectedProject.githubUrl && (
-                  <Button variant="outline" className="flex-1" asChild>
-                    <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <Button variant="outline" className="w-full">
                       <Github className="mr-2 h-4 w-4" />
                       View Code
-                    </a>
-                  </Button>
+                    </Button>
+                  </a>
                 )}
               </div>
             </div>
