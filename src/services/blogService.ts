@@ -1,5 +1,5 @@
-
 import { BlogPost } from "@/types/blog";
+import { v4 as uuidv4 } from 'uuid';
 
 // This could be replaced with an API call in the future
 export const getAllPosts = (): BlogPost[] => {
@@ -22,8 +22,33 @@ export const getRelatedPosts = (currentPostId: string, count: number = 2): BlogP
     .slice(0, count);
 };
 
+// Admin operations
+export const createPost = (post: Omit<BlogPost, 'id'>): BlogPost => {
+  const newPost: BlogPost = {
+    ...post,
+    id: uuidv4()
+  };
+  
+  blogPosts.unshift(newPost);
+  return newPost;
+};
+
+export const updatePost = (id: string, updatedPost: Partial<BlogPost>): BlogPost | null => {
+  const index = blogPosts.findIndex(post => post.id === id);
+  if (index === -1) return null;
+  
+  blogPosts[index] = { ...blogPosts[index], ...updatedPost };
+  return blogPosts[index];
+};
+
+export const deletePost = (id: string): boolean => {
+  const initialLength = blogPosts.length;
+  blogPosts = blogPosts.filter(post => post.id !== id);
+  return blogPosts.length < initialLength;
+};
+
 // Sample blog posts data
-const blogPosts: BlogPost[] = [
+let blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "The Future of Web Development: Trends to Watch in 2025",

@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,7 @@ interface Project {
   detailedDescription: string;
   challenges: string;
   solutions: string;
+  projectPath: string;
 }
 
 const ProjectsSection = () => {
@@ -36,7 +38,8 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com",
       detailedDescription: "A comprehensive e-commerce solution featuring product browsing, cart functionality, user reviews, and secure payment processing.",
       challenges: "Implementing real-time inventory tracking and ensuring a seamless checkout experience across different payment methods.",
-      solutions: "Leveraged WebSockets for real-time inventory updates and built a modular payment processing system that handles multiple payment providers."
+      solutions: "Leveraged WebSockets for real-time inventory updates and built a modular payment processing system that handles multiple payment providers.",
+      projectPath: "/projects/ecommerce"
     },
     {
       id: 2,
@@ -49,7 +52,8 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com",
       detailedDescription: "A sleek, responsive portfolio website with interactive elements, smooth transitions, and optimized performance.",
       challenges: "Creating a visually striking yet performant site with complex animations and responsive design across all devices.",
-      solutions: "Utilized code-splitting, lazy loading, and optimized animations with Framer Motion to maintain smooth performance while preserving visual fidelity."
+      solutions: "Utilized code-splitting, lazy loading, and optimized animations with Framer Motion to maintain smooth performance while preserving visual fidelity.",
+      projectPath: "/projects/portfolio"
     },
     {
       id: 3,
@@ -62,7 +66,8 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com",
       detailedDescription: "A cross-platform task management application with features like drag-and-drop organization, notifications, and collaborative task sharing.",
       challenges: "Ensuring consistent user experience across different platforms while maintaining offline functionality and data synchronization.",
-      solutions: "Implemented a robust offline-first architecture with background synchronization and platform-specific UI adaptations to maintain native feel on each platform."
+      solutions: "Implemented a robust offline-first architecture with background synchronization and platform-specific UI adaptations to maintain native feel on each platform.",
+      projectPath: "/projects/task-management"
     },
     {
       id: 4,
@@ -75,7 +80,8 @@ const ProjectsSection = () => {
       githubUrl: "https://github.com",
       detailedDescription: "An enterprise-grade content management system with workflow approval processes, role-based access control, and content versioning.",
       challenges: "Building a flexible system that accommodates various content types while maintaining security and performance at scale.",
-      solutions: "Designed a modular architecture with pluggable content types and implemented efficient caching strategies coupled with a robust permission system."
+      solutions: "Designed a modular architecture with pluggable content types and implemented efficient caching strategies coupled with a robust permission system.",
+      projectPath: "/projects/cms"
     },
   ];
   
@@ -156,9 +162,16 @@ const ProjectsSection = () => {
                   )}
                 </div>
               </CardContent>
-              <CardFooter>
-                <Button onClick={() => openProjectModal(project)} className="w-full">
-                  View Details
+              <CardFooter className="flex gap-2">
+                <Button onClick={() => openProjectModal(project)} variant="outline" className="flex-1">
+                  Quick View
+                </Button>
+                <Button 
+                  as={Link} 
+                  to={project.projectPath} 
+                  className="flex-1"
+                >
+                  View Project
                 </Button>
               </CardFooter>
             </Card>
@@ -211,8 +224,13 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="flex-1" asChild>
+                  <Link to={selectedProject.projectPath}>
+                    View Full Project
+                  </Link>
+                </Button>
                 {selectedProject.liveUrl && (
-                  <Button className="flex-1" asChild>
+                  <Button variant="outline" className="flex-1" asChild>
                     <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Visit Live
