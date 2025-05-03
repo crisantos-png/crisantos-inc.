@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -118,6 +117,11 @@ export default {
 				pulse: {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.7' }
+				},
+				pageFlip: {
+					'0%': { transform: 'rotateY(0deg)', opacity: '1' },
+					'50%': { transform: 'rotateY(10deg)', opacity: '0.5' },
+					'100%': { transform: 'rotateY(0deg)', opacity: '1' }
 				}
 			},
 			animation: {
@@ -127,7 +131,11 @@ export default {
 				'slideUp': 'slideUp 0.7s ease-in-out forwards',
 				'slideDown': 'slideDown 0.7s ease-in-out forwards',
 				'slideRight': 'slideRight 0.7s ease-in-out forwards',
-				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'page-flip': 'pageFlip 0.6s ease-in-out'
+			},
+			perspective: {
+				'1000': '1000px',
 			},
 			typography: {
 				DEFAULT: {
