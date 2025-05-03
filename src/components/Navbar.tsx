@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { isAdminLoggedIn } from '@/services/authService';
@@ -22,11 +22,13 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const location = useLocation();
-
-  const isHomePage = location.pathname === '/';
-
+  const [isHomePage, setIsHomePage] = useState(true);
+  
+  // Use window location instead of useLocation hook
   useEffect(() => {
+    // Determine if we're on the home page
+    setIsHomePage(window.location.pathname === '/');
+    
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
